@@ -163,9 +163,10 @@ namespace XMLLessons
 
 		private void SQLToXMLButton_Click(object sender, EventArgs e)
 		{
-			//Kullanmak için solution yanında yer alan AdventureWorks2008R2_SR1.exe dosya ile AdventureWorksLT database kurunuz
+            //Kullanmak için aşağıdaki linkte yer alan AdventureWorks2008R2_SR1.exe dosya ile AdventureWorksLT database kurunuz
+            //http://msftdbprodsamples.codeplex.com/releases/view/55926
 
-			SqlConnection Conn = new SqlConnection("server=.; Database=AdventureWorksLT; trusted_connection=true");
+            SqlConnection Conn = new SqlConnection("server=.; Database=AdventureWorksLT; trusted_connection=true");
 			SqlDataAdapter SDAdapter = new SqlDataAdapter("Select * From [SalesLT].[Product]", Conn);
 			DataTable DTable = new DataTable("Product");
 			SDAdapter.Fill(DTable);
